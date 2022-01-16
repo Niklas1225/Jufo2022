@@ -55,13 +55,12 @@ X_test_tensors = Variable(torch.Tensor(X_test))
 y_train_tensors = Variable(torch.Tensor(y_train))
 y_test_tensors = Variable(torch.Tensor(y_test)) 
 
-print("Training Tensor Shape: ", X_train_tensors.shape, y_train_tensors.shape)
-print("Testing Tensor Shape: ", X_test_tensors.shape, y_test_tensors.shape) 
-
 X_train_tensors_final = torch.reshape(X_train_tensors, (X_train_tensors.shape[0], 1, X_train_tensors.shape[1], X_train_tensors.shape[2]))
 X_test_tensors_final = torch.reshape(X_test_tensors, (X_test_tensors.shape[0],1, X_test_tensors.shape[1], X_test_tensors.shape[2]))
 
-print(X_train_tensors_final.shape)
+print("Training Tensor Shape: ", X_train_tensors_final.shape, y_train_tensors.shape)
+print("Testing Tensor Shape: ", X_test_tensors_final.shape, y_test_tensors.shape) 
+
 class Netz(nn.Module):
     def __init__(self, outputs, inputs, hiddens, layers, seq_length):
         super(Netz, self).__init__()
