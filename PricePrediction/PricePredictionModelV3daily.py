@@ -35,7 +35,7 @@ X_batches = []
 y_batches = []
 for i in range(40, len(X_ss)):
     X_batches.append(X_ss[i-20:i])
-    y_batches.append(y_mm[i-1, :])
+    y_batches.append(y_mm[i, :])
 
 X_batches = np.array(X_batches)
 y_batches = np.array(y_batches)
